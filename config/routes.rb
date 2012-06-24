@@ -1,4 +1,6 @@
 Hinagiku::Application.routes.draw do
+  get "tasks/destroy"
+
   get "tasks/edit"
 
   get "tasks/update"

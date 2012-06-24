@@ -2,16 +2,9 @@ require 'spec_helper'
 
 describe TasksController do
 
-  describe "GET 'edit'" do
+  describe "GET 'destroy'" do
     it "returns http success" do
-      get 'edit'
-      response.should be_success
-    end
-  end
-
-  describe "GET 'update'" do
-    it "returns http success" do
-      get 'update'
+      get 'destroy'
       response.should be_success
     end
   end
