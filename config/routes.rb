@@ -1,4 +1,8 @@
 Hinagiku::Application.routes.draw do
+  get "tasks/edit"
+
+  get "tasks/update"
+
   get "tasks/create"
 
   root :to => "tasks#index"
