@@ -11,6 +11,6 @@ Hinagiku::Application.routes.draw do
 
   resources :tasks do
     put :finish, :restart, :on => :member
-    get :done, :on => :collection
+    get :done, :search, :on => :collection
   end
 end

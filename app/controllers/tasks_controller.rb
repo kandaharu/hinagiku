@@ -1,10 +1,12 @@
+# -*- encoding: UTF-8 -*-
+
 class TasksController < ApplicationController
   def index
-    @tasks = Task.where(:done => false)
+    @tasks = Task.undone
   end
 
   def show
-    @task = Task.find(params[:id])
+    @task = Task.find params[:id]
   end
 
   def new
@@ -39,7 +41,7 @@ class TasksController < ApplicationController
   end
 
   def done
-    @tasks = Task.where :done => true
+    @tasks = Task.done
     render :index
   end
 
@@ -47,6 +49,12 @@ class TasksController < ApplicationController
     @task = Task.find params[:id]
     @task.update_attribute :done, false
     redirect_to :back
+  end
+
+  def search
+    @tasks = Task.undone
+    @tasks = @tasks.search(params[:query]) if params[:query].present?
+    render :index
   end
 
 end
