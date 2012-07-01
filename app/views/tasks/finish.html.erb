@@ -10,7 +10,7 @@
       <td>
         <%= link_to "修正", [ :edit, task ] %>
         <%= link_to "完了", [ :finish, task ], :method => :put %>
-        <%= link_to "削除", task, :method => :delete, :confirm => "本当に削除しますか? " %>
+        <%= delete_link task %>
       </td>
     </tr>
   <% end %>
