@@ -10,6 +10,7 @@ Hinagiku::Application.routes.draw do
   get "tasks/destroy"
 
   resources :tasks do
-    put :finish, :on => :member
+    put :finish, :restart, :on => :member
+    get :done, :on => :collection
   end
 end

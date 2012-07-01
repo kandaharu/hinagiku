@@ -1,12 +1,8 @@
 source 'https://rubygems.org'
-
 gem 'rails', '3.2.1'
-
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-
 gem 'sqlite3'
-
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -39,4 +35,10 @@ gem 'jquery-rails'
 
 group :development, :test do
   gem 'rspec-rails', '>= 2.3.0'
+  gem 'guard'
+  gem 'guard-rspec'
+  gem 'guard-spork'
+  gem 'spork', '>0.9.0.rc7'
+  gem 'factory_girl'
+  gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
 end
