@@ -1,14 +1,15 @@
 Hinagiku::Application.routes.draw do
-  get "tasks/destroy"
-
-  get "tasks/edit"
-
-  get "tasks/update"
-
-  get "tasks/create"
 
   root :to => "tasks#index"
-  resources :tasks
-  get "tasks/show"
+
+  post "tasks/create"
   get "tasks/new"
+  get "tasks/show"
+  get "tasks/edit"
+  get "tasks/update"
+  get "tasks/destroy"
+
+  resources :tasks do
+    put :finish, :on => :member
+  end
 end
