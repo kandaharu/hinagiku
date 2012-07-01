@@ -29,5 +29,6 @@
     </tr>
   <% end %>
 </table>
+<%= will_paginate @tasks, :inner_window => 2, :outer_window => 1, :previous_label => '前', :next_label => '次' %>
 
 <%= link_to "新規登録", [ :new, :task ] %>
